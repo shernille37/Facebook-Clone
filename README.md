@@ -1,8 +1,9 @@
-This is a [Next.js](https://nextjs.org) project 
+## Facebook Clone w/ Chat Messaging System
 
-## Facebook Clone with Chat Messaging System
+Facebook Clone w/ Chat Messaging System is
+one of my Personal NextJS Project
 
-## Getting Started
+## Try it for yourself!
 
 First, run the development server:
 
