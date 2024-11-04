@@ -10,7 +10,7 @@ import SidebarRow from "./SidebarRow";
 
 const Sidebar = () => {
   return (
-    <div className="flex-[0.33] px-6 py-3">
+    <div className="hidden lg:flex lg:flex-1 lg:flex-col px-6 py-3">
       <SidebarRow Icon={UserCircleIcon} title={"Shernille Licud"} />
       <SidebarRow Icon={UserGroupIcon} title={"Friends"} />
       <SidebarRow Icon={ClockIcon} title={"Memories"} />

@@ -76,10 +76,10 @@ const Navbar = () => {
           <ChatBubbleOvalLeftIcon className="size-6" />
         </div>
         <div className="relative flex justify-center items-center">
-          <UserIcon className="hidden lg:block size-6 mr-2" />
-          <h4 className="hidden lg:block hover:bg-slate-200 p-2 rounded-2xl cursor-pointer">
-            Shernille Licud
-          </h4>
+          <div className="p-1 hover:bg-slate-200 hover:rounded-lg cursor-pointer flex items-center ">
+            <UserIcon className="hidden lg:block size-6 mr-2" />
+            <h4 className="hidden lg:block p-2 rounded-2xl">Shernille Licud</h4>
+          </div>
           <div
             onClick={() => setProfileOpen(!isProfileOpen)}
             className="ml-2 p-2 rounded-full hover:bg-slate-200"
@@ -98,7 +98,7 @@ const Navbar = () => {
             >
               <Link
                 href="/"
-                className="block px-4 py-2 text-sm text-gray-700 lg:hidden"
+                className="block px-4 py-2 text-sm text-gray-700 lg:hidden w-full text-left hover:bg-slate-200"
               >
                 Shernille Licud
               </Link>
@@ -106,7 +106,7 @@ const Navbar = () => {
                 onClick={() => {
                   setProfileOpen(false);
                 }}
-                className="block px-4 py-2 text-sm text-gray-700"
+                className="block px-4 py-2 text-sm text-gray-700 w-full text-left hover:bg-slate-200"
                 role="menuitem"
                 tabIndex="-1"
                 id="user-menu-item-2"

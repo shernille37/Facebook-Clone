@@ -28,15 +28,15 @@ const PostForm = () => {
       </div>
 
       <div className="flex justify-evenly">
-        <div className="p-3 flex items-center m-1 hover:bg-slate-200 hover:rounded-3xl cursor-pointer">
+        <div className="p-3 flex items-center m-1 hover:bg-slate-200 hover:rounded-lg cursor-pointer">
           <VideoCameraIcon className="size-6 " />
           <h3 className="font-semibold ml-2">Live Video</h3>
         </div>
-        <div className="p-3 flex items-center m-1 hover:bg-slate-200 hover:rounded-3xl cursor-pointer">
+        <div className="p-3 flex items-center m-1 hover:bg-slate-200 hover:rounded-lg cursor-pointer">
           <PhotoIcon className="size-6 " />
           <h3 className="font-semibold ml-2">Photo/Video</h3>
         </div>
-        <div className="p-3 flex items-center m-1 hover:bg-slate-200 hover:rounded-3xl cursor-pointer">
+        <div className="p-3 flex items-center m-1 hover:bg-slate-200 hover:rounded-lg cursor-pointer">
           <FaceSmileIcon className="size-6 " />
           <h3 className="font-semibold ml-2">Feeling/Activity</h3>
         </div>
