@@ -7,7 +7,7 @@ import {
 
 const PostForm = () => {
   return (
-    <div className="flex flex-col bg-white rounded-2xl shadow-md w-full">
+    <div className="flex flex-col bg-white rounded-2xl shadow-lg w-full">
       <div className="flex p-4 justify-center items-center border-b-blue-200 rounded-lg">
         <UserCircleIcon className="size-8" />
         <form className="flex flex-1">
