@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { useState } from "react";
+import { useAuth } from "@/hooks/useAuth";
 
 import {
   MagnifyingGlassIcon,
@@ -21,6 +22,7 @@ import {
 
 const Navbar = () => {
   const [isProfileOpen, setProfileOpen] = useState(false);
+  const { signOut } = useAuth();
 
   return (
     <nav className="bg-white py-5 px-4 flex justify-between sticky top-0 z-10">
@@ -105,6 +107,7 @@ const Navbar = () => {
               <button
                 onClick={() => {
                   setProfileOpen(false);
+                  signOut();
                 }}
                 className="block px-4 py-2 text-sm text-gray-700 w-full text-left hover:bg-slate-200"
                 role="menuitem"

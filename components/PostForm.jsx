@@ -12,12 +12,16 @@ const PostForm = () => {
         <UserCircleIcon className="size-8" />
         <form className="flex flex-1">
           <input
+            id="message"
+            name="message"
             type="text"
             placeholder="What's on your mind, Shernille Licud?"
             className="flex-1 ml-4 outline-0 border-none px-2 py-3 rounded-full my-3 bg-slate-200"
           />
 
           <input
+            id="image"
+            name="image"
             type="text"
             placeholder="Image URL (Optional)"
             className="flex-1 ml-4 outline-0 border-none px-2 py-3 rounded-full my-3 bg-slate-200"

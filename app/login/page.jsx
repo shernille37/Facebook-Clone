@@ -1,8 +1,18 @@
 "use client";
 
 import Image from "next/image";
+import { useEffect } from "react";
+import { useAuth } from "@/hooks/useAuth";
+import { useAuthStore } from "@/providers/AuthStateProvider";
 
 const LoginPage = () => {
+  const { signInWithGoogle } = useAuth();
+  const { user } = useAuthStore((state) => state);
+
+  useEffect(() => {
+    if (user) console.log(user);
+  }, [user]);
+
   return (
     <div className="flex items-center justify-center bg-slate-200 h-screen">
       <div className="bg-white rounded-lg p-5 w-full lg:w-1/3 md:w-1/2">
@@ -23,7 +33,10 @@ const LoginPage = () => {
             className="object-contain h-[150px]"
           />
 
-          <button className="p-2 bg-blue-600 rounded-lg text-white text-lg">
+          <button
+            onClick={signInWithGoogle}
+            className="p-2 bg-blue-600 rounded-lg text-white text-lg"
+          >
             Log In
           </button>
         </div>

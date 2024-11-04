@@ -5,15 +5,16 @@ import {
   signInWithPopup,
   signOut,
 } from "firebase/auth";
+import { auth } from "@/lib/firebase";
+
+import { useAuthStore } from "@/providers/AuthStateProvider";
 
 export function useAuth() {
-  const [user, setUser] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const { setAuthUser, setError } = useAuthStore((state) => state);
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
-      setUser(user);
-      setLoading(false);
+      setAuthUser(user);
     });
 
     return unsubscribe;
@@ -26,6 +27,7 @@ export function useAuth() {
       return result.user;
     } catch (error) {
       console.error("Error signing in with Google:", error);
+      setError(error);
       throw error;
     }
   };
@@ -35,13 +37,12 @@ export function useAuth() {
       await signOut(auth);
     } catch (error) {
       console.error("Error signing out:", error);
+      setError(error);
       throw error;
     }
   };
 
   return {
-    user,
-    loading,
     signInWithGoogle,
     signOut: signOutUser,
   };
