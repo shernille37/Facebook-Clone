@@ -1,5 +1,5 @@
 "use client";
-import "@/app/assets/styles/header.css";
+import "@/assets/styles/header.css";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -23,7 +23,7 @@ const Navbar = () => {
   const [isProfileOpen, setProfileOpen] = useState(false);
 
   return (
-    <nav className="bg-white py-5 px-4 flex justify-between sticky top-0">
+    <nav className="bg-white py-5 px-4 flex justify-between sticky top-0 z-10">
       <div className="flex justify-evenly">
         <Image
           height={20}

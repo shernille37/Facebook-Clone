@@ -1,5 +1,9 @@
-import Navbar from "@/app/components/Navbar";
+import Sidebar from "@/components/Sidebar";
 
 export default function Home() {
-  return <Navbar />;
+  return (
+    <div className="flex">
+      <Sidebar />
+    </div>
+  );
 }
