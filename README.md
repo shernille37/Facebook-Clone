@@ -1,7 +1,6 @@
 ## Facebook Clone w/ Chat Messaging System
 
-Facebook Clone w/ Chat Messaging System is
-one of my Personal NextJS Project
+Facebook Posts and Chat Messaging System
 
 ## Try it for yourself!
 
