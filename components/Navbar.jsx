@@ -22,7 +22,7 @@ import {
 
 const Navbar = () => {
   const [isProfileOpen, setProfileOpen] = useState(false);
-  const { signOut } = useAuth();
+  const { signOut, user } = useAuth();
 
   return (
     <nav className="bg-white py-5 px-4 flex justify-between sticky top-0 z-10">
@@ -79,8 +79,21 @@ const Navbar = () => {
         </div>
         <div className="relative flex justify-center items-center">
           <div className="p-1 hover:bg-slate-200 hover:rounded-lg cursor-pointer flex items-center ">
-            <UserIcon className="hidden lg:block size-6 mr-2" />
-            <h4 className="hidden lg:block p-2 rounded-2xl">Shernille Licud</h4>
+            {user && (
+              <>
+                <Image
+                  src={user.photoURL}
+                  height={500}
+                  width={500}
+                  alt="Profile Picture"
+                  className="rounded-full size-8 hidden lg:block mr-2"
+                />
+
+                <h4 className="hidden lg:block p-2 rounded-2xl">
+                  {user.displayName}
+                </h4>
+              </>
+            )}
           </div>
           <div
             onClick={() => setProfileOpen(!isProfileOpen)}

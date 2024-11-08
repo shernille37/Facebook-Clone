@@ -1,3 +1,5 @@
+"use client";
+
 import {
   FaceSmileIcon,
   PhotoIcon,
@@ -5,29 +7,66 @@ import {
   VideoCameraIcon,
 } from "@heroicons/react/24/solid";
 
+import { db } from "@/lib/firebase";
+import { collection, query, addDoc, serverTimestamp } from "firebase/firestore";
+import { useAuth } from "@/hooks/useAuth";
+
+import { useState } from "react";
+
 const PostForm = () => {
+  const [message, setMessage] = useState("");
+  const [image, setImage] = useState("");
+
+  const { user } = useAuth();
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setMessage("");
+    setImage("");
+
+    try {
+      const posts = query(collection(db, "posts"));
+
+      await addDoc(posts, {
+        message,
+        timestamp: serverTimestamp(),
+        profilePic: user.photoURL,
+        username: user.displayName,
+        image,
+      });
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   return (
     <div className="flex flex-col bg-white rounded-2xl shadow-lg w-full">
       <div className="flex p-4 justify-center items-center border-b-blue-200 rounded-lg">
         <UserCircleIcon className="size-8" />
-        <form className="flex flex-1">
+        <form onSubmit={handleSubmit} className="flex flex-1">
           <input
             id="message"
             name="message"
             type="text"
+            value={message}
             placeholder="What's on your mind, Shernille Licud?"
             className="flex-1 ml-4 outline-0 border-none px-2 py-3 rounded-full my-3 bg-slate-200"
+            onChange={(e) => setMessage(e.target.value)}
           />
 
           <input
             id="image"
             name="image"
             type="text"
+            value={image}
             placeholder="Image URL (Optional)"
             className="flex-1 ml-4 outline-0 border-none px-2 py-3 rounded-full my-3 bg-slate-200"
+            onChange={(e) => setImage(e.target.value)}
           />
 
-          <button className="hidden">Hidden Submit</button>
+          <button type="submit" className="hidden">
+            Hidden Submit
+          </button>
         </form>
       </div>
 

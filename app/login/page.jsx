@@ -3,14 +3,16 @@
 import Image from "next/image";
 import { useEffect } from "react";
 import { useAuth } from "@/hooks/useAuth";
-import { useAuthStore } from "@/providers/AuthStateProvider";
+import { useRouter } from "next/navigation";
 
 const LoginPage = () => {
-  const { signInWithGoogle } = useAuth();
-  const { user } = useAuthStore((state) => state);
+  const router = useRouter();
+  const { signInWithGoogle, user } = useAuth();
 
   useEffect(() => {
-    if (user) console.log(user);
+    if (user) {
+      router.push("/");
+    }
   }, [user]);
 
   return (
