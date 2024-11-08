@@ -15,7 +15,6 @@ export default function RootLayout({ children }) {
       <AuthStoreProvider>
         <html lang="en">
           <body>
-            <Navbar />
             <main>{children}</main>
           </body>
         </html>

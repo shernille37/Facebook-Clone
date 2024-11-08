@@ -8,6 +8,7 @@ const Widgets = () => {
         className="border-none overflow-hidden"
         allowtransparency="true"
         allow="encrypted-media"
+        sandbox="allow-scripts allow-same-origin"
       ></iframe>
     </div>
   );

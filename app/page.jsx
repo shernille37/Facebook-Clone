@@ -1,4 +1,5 @@
 import Feed from "@/components/Feed";
+import Navbar from "@/components/Navbar";
 import Sidebar from "@/components/Sidebar";
 import Widgets from "@/components/Widgets";
 import { getCurrentUser } from "@/utils/getCurrentUser";
@@ -10,11 +11,14 @@ const Home = async () => {
   if (!user) redirect("/login");
 
   return (
-    <div className="flex h-screen">
-      <Sidebar />
-      <Feed />
-      <Widgets />
-    </div>
+    <>
+      <Navbar />
+      <div className="flex h-screen">
+        <Sidebar />
+        <Feed />
+        <Widgets />
+      </div>
+    </>
   );
 };
 

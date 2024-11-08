@@ -3,9 +3,10 @@
 import {
   FaceSmileIcon,
   PhotoIcon,
-  UserCircleIcon,
   VideoCameraIcon,
 } from "@heroicons/react/24/solid";
+
+import Image from "next/image";
 
 import { db } from "@/lib/firebase";
 import { collection, query, addDoc, serverTimestamp } from "firebase/firestore";
@@ -42,14 +43,22 @@ const PostForm = () => {
   return (
     <div className="flex flex-col bg-white rounded-2xl shadow-lg w-full">
       <div className="flex p-4 justify-center items-center border-b-blue-200 rounded-lg">
-        <UserCircleIcon className="size-8" />
+        {user && (
+          <Image
+            src={user.photoURL}
+            height={500}
+            width={500}
+            alt="Profile Picture"
+            className="rounded-full size-10 ml-4"
+          />
+        )}
         <form onSubmit={handleSubmit} className="flex flex-1">
           <input
             id="message"
             name="message"
             type="text"
             value={message}
-            placeholder="What's on your mind, Shernille Licud?"
+            placeholder={`What's on your mind, ${user && user.displayName}?`}
             className="flex-1 ml-4 outline-0 border-none px-2 py-3 rounded-full my-3 bg-slate-200"
             onChange={(e) => setMessage(e.target.value)}
           />

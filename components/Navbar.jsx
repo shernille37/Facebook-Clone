@@ -14,7 +14,6 @@ import {
   VideoCameraIcon,
   UserGroupIcon,
   PhotoIcon,
-  UserIcon,
   BellIcon,
   ChatBubbleOvalLeftIcon,
   ChevronDownIcon,
