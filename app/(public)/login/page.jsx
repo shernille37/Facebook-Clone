@@ -7,13 +7,13 @@ import { useRouter } from "next/navigation";
 
 const LoginPage = () => {
   const router = useRouter();
-  const { signInWithGoogle, user } = useAuth();
+  const { signInWithGoogle, user, loading } = useAuth();
 
   useEffect(() => {
-    if (user) {
+    if (user && !loading) {
       router.push("/");
     }
-  }, [user]);
+  }, [router, user, loading]);
 
   return (
     <div className="flex items-center justify-center bg-slate-200 h-screen">

@@ -1,7 +1,8 @@
 import { adminAuth } from "@/lib/firebase-admin";
 import { cookies } from "next/headers";
+import { cache } from "react";
 
-export const getCurrentUser = async () => {
+export const getCurrentUser = cache(async () => {
   try {
     const session = (await cookies()).get("token");
 
@@ -29,4 +30,4 @@ export const getCurrentUser = async () => {
     console.error("Error getting the User");
     return null;
   }
-};
+});

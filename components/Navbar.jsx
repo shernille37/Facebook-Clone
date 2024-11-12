@@ -4,6 +4,7 @@ import "@/assets/styles/header.css";
 import Image from "next/image";
 import Link from "next/link";
 
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { useAuth } from "@/hooks/useAuth";
 
@@ -22,6 +23,8 @@ import {
 const Navbar = () => {
   const [isProfileOpen, setProfileOpen] = useState(false);
   const { signOut, user } = useAuth();
+
+  const pathName = usePathname();
 
   return (
     <nav className="bg-white py-5 px-4 flex justify-between sticky top-0 z-10">
@@ -49,9 +52,14 @@ const Navbar = () => {
       </div>
 
       <div className="hidden lg:flex justify-center ">
-        <div className="header-option border-b-4 border-b-blue-500">
+        <Link
+          href={"/"}
+          className={`header-option ${
+            pathName == "/" ? "border-b-4 border-b-blue-500" : ""
+          } `}
+        >
           <HomeIcon className="size-6" />
-        </div>
+        </Link>
         <div className="header-option">
           <BuildingStorefrontIcon className="size-6" />
         </div>
@@ -73,9 +81,14 @@ const Navbar = () => {
         <div className="header-icon-right mr-2 cursor-pointer">
           <BellIcon className="size-6" />
         </div>
-        <div className="header-icon-right mr-2 cursor-pointer">
+        <Link
+          href={"/chat"}
+          className={`header-icon-right ${
+            pathName == "/chat" ? "active" : ""
+          } bg-blue mr-2 cursor-pointer`}
+        >
           <ChatBubbleOvalLeftIcon className="size-6" />
-        </div>
+        </Link>
         <div className="relative flex justify-center items-center">
           <div className="p-1 hover:bg-slate-200 hover:rounded-lg cursor-pointer flex items-center ">
             {user && (
@@ -114,7 +127,7 @@ const Navbar = () => {
                 href="/"
                 className="block px-4 py-2 text-sm text-gray-700 lg:hidden w-full text-left hover:bg-slate-200"
               >
-                Shernille Licud
+                {user.displayName}
               </Link>
               <button
                 onClick={() => {

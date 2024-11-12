@@ -42,7 +42,7 @@ const PostForm = () => {
 
   return (
     <div className="flex flex-col bg-white rounded-2xl shadow-lg w-full">
-      <div className="flex p-4 justify-center items-center border-b-blue-200 rounded-lg">
+      <div className="flex px-8 py-4 justify-center items-center border-b-blue-200 rounded-lg">
         {user && (
           <Image
             src={user.photoURL}
@@ -79,7 +79,7 @@ const PostForm = () => {
         </form>
       </div>
 
-      <div className="flex justify-evenly">
+      <div className="flex justify-evenly p-2">
         <div className="p-3 flex items-center m-1 hover:bg-slate-200 hover:rounded-lg cursor-pointer">
           <VideoCameraIcon className="size-6 " />
           <h3 className="font-semibold ml-2">Live Video</h3>
