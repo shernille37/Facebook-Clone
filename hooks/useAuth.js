@@ -11,6 +11,7 @@ import { useRouter } from "next/navigation";
 export function useAuth() {
   const [user, setUser] = useState(null);
   const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   const router = useRouter();
 
@@ -18,6 +19,7 @@ export function useAuth() {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       setUser(user);
+      setLoading(false);
     });
 
     return unsubscribe;
@@ -54,6 +56,7 @@ export function useAuth() {
   return {
     user,
     error,
+    loading,
     setUser,
     setError,
     signInWithGoogle,

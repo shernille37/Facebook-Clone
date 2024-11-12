@@ -18,3 +18,7 @@
   background-color: #e5e7eb;
   border-radius: 999px;
 }
+
+.header-icon-right.active {
+  background-color: #bfdbfe;
+}
