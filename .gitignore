@@ -31,6 +31,7 @@ yarn-error.log*
 
 # env files (can opt-in for commiting if needed)
 .env*
+facebook-clone-ddb6b-firebase-adminsdk-o2nrn-84ce2395d2.json
 
 # vercel
 .vercel
