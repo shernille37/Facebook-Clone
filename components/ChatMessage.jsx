@@ -8,7 +8,8 @@ const ChatMessage = () => {
   for (let index = 0; index < 100; index++) {
     messages.push({
       sender: index % 2 == 0 ? true : false,
-      message: "Hello World",
+      message:
+        "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Exercitationem accusantium obcaecati, sint soluta necessitatibus doloremque quasi? Dignissimos veritatis quod iste autem assumenda cum aut dolores ipsum nobis. Ex, rerum delectus?",
     });
   }
 

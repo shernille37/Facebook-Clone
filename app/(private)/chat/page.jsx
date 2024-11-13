@@ -3,7 +3,7 @@ import ChatSidebar from "@/components/ChatSidebar";
 
 const ChatPage = () => {
   return (
-    <div className="flex h-screen">
+    <div className="flex h-screen-nav">
       <ChatSidebar />
       <ChatMessage />
     </div>

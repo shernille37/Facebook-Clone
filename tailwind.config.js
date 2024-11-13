@@ -14,6 +14,13 @@ module.exports = {
       borderRadius: {
         full: "999px",
       },
+      maxWidth: {
+        35: "35%",
+        50: "50%",
+      },
+      height: {
+        "screen-nav": "calc(100vh - 90px)",
+      },
     },
   },
   plugins: [],

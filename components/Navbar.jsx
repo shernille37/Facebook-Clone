@@ -27,7 +27,7 @@ const Navbar = () => {
   const pathName = usePathname();
 
   return (
-    <nav className="bg-white py-5 px-4 flex justify-between sticky top-0 z-10">
+    <nav className="bg-white py-5 px-4 flex justify-between sticky top-0 z-10 shadow-sm">
       <div className="flex justify-evenly">
         <Link href={"/"}>
           <Image
