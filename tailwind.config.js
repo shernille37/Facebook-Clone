@@ -19,7 +19,7 @@ module.exports = {
         50: "50%",
       },
       height: {
-        "screen-nav": "calc(100vh - 90px)",
+        "screen-nav": "calc(100vh - 56px)",
       },
     },
   },

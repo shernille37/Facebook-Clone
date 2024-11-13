@@ -27,8 +27,8 @@ const Navbar = () => {
   const pathName = usePathname();
 
   return (
-    <nav className="bg-white py-5 px-4 flex justify-between sticky top-0 z-10 shadow-sm">
-      <div className="flex justify-evenly">
+    <nav className="bg-white py-1 px-4 flex justify-between sticky top-0 z-10 shadow-sm">
+      <div className="flex items-center justify-evenly">
         <Link href={"/"}>
           <Image
             height={20}
@@ -38,11 +38,11 @@ const Navbar = () => {
               "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Facebook_f_logo_%282019%29.svg/1200px-Facebook_f_logo_%282019%29.svg.png"
             }
             alt={"Facebook Logo"}
-            className="h-[50px] w-auto"
+            className="h-[40px] w-auto"
           />
         </Link>
 
-        <div className="flex justify-center p-3 ml-3 rounded-full bg-slate-200">
+        <div className="flex justify-center p-2 ml-3 rounded-full bg-slate-200">
           <MagnifyingGlassIcon className="size-6" />
           <input
             id="search-facebook"
@@ -54,12 +54,11 @@ const Navbar = () => {
       </div>
 
       <div className="hidden lg:flex justify-center ">
-        <Link
-          href={"/"}
-          className={`header-option ${
-            pathName == "/" ? "border-b-4 border-b-blue-500" : ""
-          } `}
-        >
+        <Link href={"/"} className="header-option relative">
+          {pathName == "/" && (
+            <span className="absolute bottom-[-5px] left-0 w-full h-1 bg-blue-500"></span>
+          )}
+
           <HomeIcon className="size-6" />
         </Link>
         <div className="header-option">
