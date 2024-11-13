@@ -12,8 +12,6 @@ const ChatSidebar = () => {
         </div>
       </div>
       <Conversation />
-      <Conversation />
-      <Conversation />
     </div>
   );
 };

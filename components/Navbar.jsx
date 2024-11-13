@@ -29,16 +29,18 @@ const Navbar = () => {
   return (
     <nav className="bg-white py-5 px-4 flex justify-between sticky top-0 z-10">
       <div className="flex justify-evenly">
-        <Image
-          height={20}
-          width={50}
-          priority={true}
-          src={
-            "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Facebook_f_logo_%282019%29.svg/1200px-Facebook_f_logo_%282019%29.svg.png"
-          }
-          alt={"Facebook Logo"}
-          className="h-[50px] w-auto"
-        />
+        <Link href={"/"}>
+          <Image
+            height={20}
+            width={50}
+            priority={true}
+            src={
+              "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Facebook_f_logo_%282019%29.svg/1200px-Facebook_f_logo_%282019%29.svg.png"
+            }
+            alt={"Facebook Logo"}
+            className="h-[50px] w-auto"
+          />
+        </Link>
 
         <div className="flex justify-center p-3 ml-3 rounded-full bg-slate-200">
           <MagnifyingGlassIcon className="size-6" />
