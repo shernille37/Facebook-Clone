@@ -8,7 +8,7 @@ const Message = ({ sender, message }) => {
       <div
         className={`${sender ? "bg-blue-500" : "bg-slate-200"} ${
           sender ? "text-white" : "text-black"
-        }  rounded-full px-3 py-1`}
+        } max-w-[25%]  rounded-lg px-3 py-1`}
       >
         {message}
       </div>
