@@ -1,19 +1,29 @@
-## Facebook Clone w/ Chat Messaging System
+## Facebook Clone
 
-Facebook Posts and Chat Messaging System
+> Facebook Clone where you can post real time with Firebase
 
-## Try it for yourself!
+## Features
+- User authentication with Firebase Google Provider
+- Post what in your mind
+- Real time post update with Firebase Firestore
 
-First, run the development server:
+## Usage
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- Create a [Firebase](https://firebase.google.com/) account with FireStore and obtain your `SECRET KEYS`
+
+Add a `.env` file in the `frontend/` and add the following
+
 ```
+NODE_ENV=development
+PORT=5000
+MONGO_URI= YOUR MONGO URI
+JWT_SECRET= YOUR JWT SECRET
+STRIPE_SECRET_KEY= YOUR STRIPE SECRET KEY
+CLIENT_URL=http://localhost:3000
+SERVER_URL=http://localhost:8000
+CLOUDINARY_NAME= YOUR CLOUDINARY NAME
+CLOUDINARY_API_KEY= YOUR CLOUDINARY API KEY
+CLOUDINARY_API_SECRET= YOUR CLOUDINARY API SECRET
+PAGINATION_LIMIT= YOUR PAGINATION LIMIT
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+```
