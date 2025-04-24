@@ -9,6 +9,14 @@
 - Post what in your mind
 - Real time post update with Firebase Firestore
 
+## Technologies Used
+<p>
+  <a href="#"><img alt="NextJS" src="https://img.shields.io/badge/NextJS-20232a.svg?logo=nextdotjs&logoColor=white"></a>
+  <a href="#"><img alt="Firebase" src="https://img.shields.io/badge/Firebase-FFA611.svg?logo=firebase&logoColor=white"></a>
+  
+</p>
+
+
 ## Usage
 
 - Create a [Firebase](https://firebase.google.com/) account with FireStore and obtain your `SECRET KEYS`
