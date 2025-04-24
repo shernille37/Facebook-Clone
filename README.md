@@ -6,7 +6,7 @@
 
 ## Features
 - User authentication with Firebase Google Provider
-- Post what in your mind
+- Post what's in your mind
 - Real time post update with Firebase Firestore
 
 ## Technologies Used
