@@ -2,6 +2,8 @@
 
 > Facebook Clone where you can post real time with Firebase
 
+<img src="./public/screen.png">
+
 ## Features
 - User authentication with Firebase Google Provider
 - Post what in your mind
